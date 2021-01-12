@@ -1,0 +1,13 @@
+{
+	"name": "styles-issue-example-block",
+	"version": "0.1.0",
+	"author": "Florian Brinkmann",
+	"license": "GPL-2.0+",
+	"scripts": {
+		"start": "wp-scripts start",
+		"build": "wp-scripts build"
+	},
+	"dependencies": {
+		"@wordpress/scripts": "^12.6.1"
+	}
+}
