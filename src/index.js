@@ -13,45 +13,11 @@ import {
 import {
 	Component,
 } from '@wordpress/element';
-import apiFetch from '@wordpress/api-fetch';
 
 class Edit extends Component {
 	constructor(props) {
 		super(props);
 
-		this.fetchPost = this.fetchPost.bind(this);
-
-		this.state = {
-			postObject: null,
-		};
-	}
-
-	componentDidMount() {
-		if ( this.props.attributes.id !== 0 ) {
-			this.fetchPost();
-		}
-	}
-
-	componentDidUpdate(prevProps, prevState, snapshot) {
-		if ( prevProps.attributes.id !== this.props.attributes.id && this.props.attributes.id !== 0 ) {
-			this.fetchPost();
-		}
-
-		if ( this.props.attributes.id === 0 && this.state.postObject !== null ) {
-			this.setState( { postObject: null } );
-		}
-	}
-
-	fetchPost() {
-		const {
-			attributes: {
-				id,
-			},
-		} = this.props;
-
-		apiFetch( { path: `/wp/v2/posts/${id}?_embed` } ).then( postObject => {
-			this.setState( { postObject } );
-		} )
 	}
 
 	render() {
